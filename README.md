@@ -1,130 +1,121 @@
+# Dotfiles
 
-```markdown
-# 🧩 Dotfiles Configuration
+My personal configuration files managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-This repository contains my personal configuration files, managed with **[GNU Stow](https://www.gnu.org/software/stow/)** for easy symlink management.
+## Structure
 
-## 📁 Repository Structure
+This repository uses GNU Stow to manage symlinks for configuration files. Each directory represents a "package" that can be independently installed or removed.
 
-Each directory in this repo corresponds to a configuration “package” (e.g. `zsh`, `nvim`, `git`), which mirrors the directory structure under `$HOME`.
-
-Example:
 ```
-
 dotfiles/
-├── README.md
-├── zsh/
-│   └── .zshrc
+├── bash/
+│   └── .bashrc
+├── vim/
+│   └── .vimrc
+├── git/
+│   └── .gitconfig
 ├── nvim/
 │   └── .config/
 │       └── nvim/
-│           ├── init.lua
-│           └── lua/
-│               └── user/
-│                   └── settings.lua
-└── git/
-└── .gitconfig
+│           └── init.vim
+└── README.md
+```
 
-````
+## Prerequisites
 
-When stowed, each file is symlinked into the corresponding place under your home directory.
-
----
-
-## ⚙️ Prerequisites
-
-Make sure GNU Stow is installed:
+Install GNU Stow:
 
 ```bash
 # Debian/Ubuntu
 sudo apt install stow
 
-# Fedora
-sudo dnf install stow
-
-# Arch 
-sudo pacman -S stow 
-
-# macOS (Homebrew)
+# macOS
 brew install stow
 
-````
----
+# Arch Linux
+sudo pacman -S stow
 
-## 🚀 Usage
-
-Clone your dotfiles repository **into your home directory** (recommended):
-
-```bash
-cd ~
-git clone https://github.com/c0deNeyt/dotfiles.git
-cd dotfiles
+# Fedora
+sudo dnf install stow
 ```
 
-Then use **Stow** to “deploy” any configuration:
+## Installation
+
+1. Clone this repository to your home directory:
 
 ```bash
-# Example: stow zsh config
-stow zsh
-
-# Example: stow multiple configs
-stow nvim git tmux
-```
-
-This creates symlinks in your `$HOME` directory pointing to the files in this repo.
-
----
-
-## 🔄 Updating and Unstowing
-
-To remove symlinks (unstow):
-
-```bash
-stow -D zsh
-```
-
-To restow (useful after updating file paths):
-
-```bash
-stow -R nvim
-```
-
----
-
-## 🧼 Notes
-
-* Run all `stow` commands from inside the **root of this repository**.
-* Avoid naming conflicts by keeping the folder structure consistent with `$HOME`.
-* Always check with `stow -nv <pkg>` first (dry run) before applying.
-
----
-
-## 🧠 Tips
-
-* You can keep machine-specific configs in a `local/` directory that you **don’t stow**.
-* If you’re syncing between multiple systems, consider `.stow-local-ignore` to exclude files.
-* Use git branches for environment-specific setups (e.g. `macos`, `linux`).
-
----
-
-## 🪄 Example Workflow
-
-```bash
-# After a fresh OS install
-git clone https://github.com/c0deNeyt/dotfiles.git ~/dotfiles
+git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow zsh git nvim tmux
 ```
 
-And you’re ready to roll 🎉
+2. Use Stow to create symlinks for the packages you want:
 
----
+```bash
+# Install a specific package
+stow bash
 
-## 🧰 References
+# Install multiple packages
+stow vim git nvim
 
-* [GNU Stow Manual](https://www.gnu.org/software/stow/manual/stow.html)
-* [Managing Dotfiles with GNU Stow (Guide)](https://alexpearce.me/2016/02/managing-dotfiles-with-stow/)
+# Install all packages
+stow */
+```
 
----
+This will create symlinks from your home directory to the files in the dotfiles repository.
 
-© 2025 c0deNyet 
+## Uninstallation
+
+To remove symlinks for a package:
+
+```bash
+# Remove a specific package
+stow -D bash
+
+# Remove multiple packages
+stow -D vim git nvim
+```
+
+## Adding New Configurations
+
+1. Create a new directory for your application
+2. Mirror the structure from your home directory
+3. Move your config files into the new structure
+4. Run `stow <package-name>`
+
+Example for adding tmux config:
+
+```bash
+# Create the package directory
+mkdir -p tmux
+
+# Move your config (from ~/ to ~/dotfiles/tmux/)
+mv ~/.tmux.conf ~/dotfiles/tmux/
+
+# Install the package
+cd ~/dotfiles
+stow tmux
+```
+
+## Tips
+
+- Use `stow -n <package>` to simulate the operation without making changes
+- Use `stow -v <package>` for verbose output
+- Run stow commands from the dotfiles directory
+- Keep sensitive information (tokens, passwords) out of version control
+
+## Troubleshooting
+
+**Conflict errors**: If Stow reports conflicts, you may have existing files. Back them up and remove them before running Stow:
+
+```bash
+mv ~/.bashrc ~/.bashrc.backup
+stow bash
+```
+
+**Wrong symlink target**: Make sure you're running stow from the dotfiles directory, not from within a package directory.
+
+## License
+
+Feel free to use and modify as needed.
+
+© 2025 c0deNeyt 
