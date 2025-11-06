@@ -114,6 +114,14 @@ stow bash
 
 **Wrong symlink target**: Make sure you're running stow from the dotfiles directory, not from within a package directory.
 
+## Credits
+
+This dotfiles configuration includes ideas and configurations from the following repositories:
+
+- [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) - Template for my nvim config 
+
+Thank you to all the developers who share their configurations and make the dotfiles community great!
+
 ## License
 
 Feel free to use and modify as needed.
