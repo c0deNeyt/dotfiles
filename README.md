@@ -12,12 +12,9 @@ dotfiles/
 │   └── .bashrc
 ├── vim/
 │   └── .vimrc
-├── git/
-│   └── .gitconfig
 ├── nvim/
 │   └── .config/
 │       └── nvim/
-│           └── init.vim
 └── README.md
 ```
 
@@ -119,11 +116,8 @@ stow bash
 This dotfiles configuration includes ideas and configurations from the following repositories:
 
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) - Template for my nvim config 
+- [Luke Smith ](https://larbs.xyz) - Template for my desktop 
 
 Thank you to all the developers who share their configurations and make the dotfiles community great!
-
-## License
-
-Feel free to use and modify as needed.
 
 © 2025 c0deNeyt 
