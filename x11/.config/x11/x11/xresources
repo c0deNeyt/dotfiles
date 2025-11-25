@@ -1,0 +1,99 @@
+!! Transparency (0-1):
+*.alpha: 0.8
+
+!! Set a default font and font size as below:
+*.font: monospace:size=10
+
+! --- My Custom Refined Scheme (with usage legend) ---
+/* *.foreground:   #cfe8f0     */ /* main text color (default terminal text) */
+/* *.background:   #0c1214     */ /* background color */
+/* *.cursorColor:  #adcbda     */ /* cursor / caret */
+
+
+! --- NORMAL COLORS (0–7) ---
+/* *.color0:  #101619     black: darkest base tone — used for borders, shadows */
+/* *.color1:  #d3869b     * prev: #2a363c  red: errors, failed cmds, warnings (stderr output) */
+/* *.color2:  #54d77f      green: directories in ls --color=auto */
+/* *.color3:  #8ec07c      prev: #45565e  yellow: block devices, FIFOs, or special files */
+/* *.color4:  #18e133      blue: main accent (status bar, prompt highlights) */
+/* *.color5:  #77909d      magenta: compressed archives (.tar, .zip), media */
+/* *.color6:  #8ab1c2      cyan: symbolic links (ln -s targets) */
+/* *.color7:  #c9d8e0      white: general text, filenames, prompt text */
+
+! --- BRIGHT COLORS (*/ 8–15) ---
+/* *.color8:  #18e133      bright black/green: window highlight */
+/* *.color9:  #b3cd84      bright red: executable files (scripts, binaries) */
+/* *.color10: #6cc3ab      bright green: readable dirs / success messages */
+/* *.color11: #62e1c0      bright yellow: device or socket highlight */
+/* *.color12: #b4e0d6      bright blue: directory highlight (ls -l) */
+/* *.color13: #8ec07c      bright magenta: archives/media alt highlight */
+/* *.color14: #c4d4ee      bright cyan: symlinks (secondary) / hostname color */
+/* *.color15: #54b79c      bright white: prompt, selected text, clean contrast */
+
+! =========================================
+! Green Theme for Xresources
+! =========================================
+! A modern green color scheme with good contrast
+! Save to ~/.Xresources and run: xrdb ~/.Xresources
+
+! =========================================
+! Special Colors
+! =========================================
+*.foreground:   #d0e1d0
+*.background:   #0d1f0d
+*.cursorColor:  #4dd64d
+
+! Selection/Highlight colors (for st)
+*.selectionForeground: #ffffff
+*.selectionBackground: #3a7a3a
+
+! =========================================
+! Black and Grey
+! =========================================
+*.color0:       #1a2f1a
+! *.color8:       #2d4a2d 
+*.color8:       #4a6b4a /* windows highlight */ 
+
+! =========================================
+! Red (Error/Warning tones with green tint)
+! =========================================
+*.color1:       #cc6666
+*.color9:       #ff8888
+
+! =========================================
+! Green (Primary accent)
+! =========================================
+*.color2:       #4dd64d
+*.color10:      #6fff6f
+
+! =========================================
+! Yellow (Warm green-yellow)
+! =========================================
+*.color3:       #a8cc3a
+*.color11:      #d4ff4d
+
+! =========================================
+! Blue (Cool green-blue)
+! =========================================
+*.color4:       #3a9d8f
+*.color12:      #4dc9b8
+
+! =========================================
+! Magenta (Purple-green)
+! =========================================
+*.color5:       #7aa874
+*.color13:      #9fd699
+
+! =========================================
+! Cyan (Bright green-cyan)
+! =========================================
+*.color6:       #3acc8f
+*.color14:      #5cffb8
+
+! =========================================
+! White
+! =========================================
+*.color7:       #b8d4b8
+*.color15:      #e0f0e0
+
+
