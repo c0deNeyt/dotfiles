@@ -8,13 +8,36 @@ This repository uses GNU Stow to manage symlinks for configuration files. Each d
 
 ```
 dotfiles/
-├── bash/
-│   └── .bashrc
-├── vim/
-│   └── .vimrc
+├── bashh/
+│   └── .bashrc #Os config
+├── x11/
+│   └── .config/
+│       └── x11/ #profile config
+├── shell/
+│   └── .config/
+│       └── shell/ #profile config
 ├── nvim/
 │   └── .config/
-│       └── nvim/
+│       └── nvim/ #Editor
+├── dwm/
+│   └── .local/
+│       └── src/
+│           └── dwm/ #suckless Window Manager
+├── dwmblocks/
+│   └── .local/
+│       └── src/
+│           └── dwmblocks/ # Scripts for statusbar
+├── dmenu/
+│   └── .local/
+│       └── src/
+│           └── dmenu/ #suckless application
+├── st/
+│   └── .local/
+│       └── src/
+│           └── st/ #suckless Terminal
+├── tmux/
+│   └── .config/
+│       └── tmux/ #terminal Multiplexer
 └── README.md
 ```
 
@@ -66,10 +89,10 @@ To remove symlinks for a package:
 
 ```bash
 # Remove a specific package
-stow -D bash
+stow -D bashh
 
 # Remove multiple packages
-stow -D vim git nvim
+stow -D dwm dwmblocks st dmenu 
 ```
 
 ## Adding New Configurations
@@ -83,10 +106,10 @@ Example for adding tmux config:
 
 ```bash
 # Create the package directory
-mkdir -p tmux
+mkdir -p bashh 
 
-# Move your config (from ~/ to ~/dotfiles/tmux/)
-mv ~/.tmux.conf ~/dotfiles/tmux/
+# Move your config (from ~/ to ~/dotfiles/bashh/)
+mv ~/.bashrc ~/dotfiles/bassh/
 
 # Install the package
 cd ~/dotfiles
@@ -106,7 +129,7 @@ stow tmux
 
 ```bash
 mv ~/.bashrc ~/.bashrc.backup
-stow bash
+stow bashsh
 ```
 
 **Wrong symlink target**: Make sure you're running stow from the dotfiles directory, not from within a package directory.
@@ -116,7 +139,7 @@ stow bash
 This dotfiles configuration includes ideas and configurations from the following repositories:
 
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) - Template for my nvim config 
-- [Luke Smith ](https://larbs.xyz) - Template for my desktop 
+- [Luke Smith ](https://larbs.xyz) - Template for my desktop environment
 
 Thank you to all the developers who share their configurations and make the dotfiles community great!
 
