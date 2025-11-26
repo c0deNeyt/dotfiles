@@ -10,6 +10,9 @@ This repository uses GNU Stow to manage symlinks for configuration files. Each d
 dotfiles/
 ├── bashh/
 │   └── .bashrc #Os config
+├── scripts/
+│   └── .local 
+│       └── bin/ #Some customize Script
 ├── x11/
 │   └── .config/
 │       └── x11/ #profile config
@@ -140,6 +143,7 @@ This dotfiles configuration includes ideas and configurations from the following
 
 - [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) - Template for my nvim config 
 - [Larbs by Luke Smith ](https://larbs.xyz) - Template for my desktop environment
+- [Sessionizer by Theprimeagen](https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer) - Tmux session manager
 
 Thank you to all the developers who share their configurations and make the dotfiles community great!
 
