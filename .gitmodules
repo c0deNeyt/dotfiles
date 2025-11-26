@@ -1,0 +1,3 @@
+[submodule "/home/neyt/dotfiles/tpm"]
+	path = /home/neyt/dotfiles/tpm
+	url = git@github.com:c0deNeyt/dotfiles.git
