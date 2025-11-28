@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script allow's you to find program names
+# hat you can in in a suckless dwm tags 
+# Usage: ./find-name [program name]
+# e.g: ./find-name brave
+[[ -z "$1" ]] && echo Missing application name as param. && exit 1 
+
+usrInput="$1"
+
+#convert command ouput to array
+classID=($(xdotool search -name "${usrInput}"))
+varResults=()
+
+while read -r ids; do
+	varResults+="$(xprop -id ${ids} WM_CLASS)\n"
+done <<< $(printf '%s\n' "${classID[@]}")
+
+echo Available Tags for DWM:
+while read -r result; do
+	echo "$result" | awk -F'"' '{print "App Name: " $2 " ======> " "Tag Name: " $4}'
+done <<< $(echo -e "${varResults[@]}" | uniq )
