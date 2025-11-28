@@ -4,7 +4,6 @@
 a=(
 /etc/nginx
 ~/
-~/vimwiki
 ~/projects/html
 ~/projects/php
 ~/.local/src

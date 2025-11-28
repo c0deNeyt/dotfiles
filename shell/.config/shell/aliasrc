@@ -39,10 +39,15 @@ alias \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto"
 
+alias \
+
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
 	g="git" \
+	gcm="git commit -m" \
+	glo="git log --oneline" \
+	gs="git status" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
 	sdn="shutdown -h now" \
